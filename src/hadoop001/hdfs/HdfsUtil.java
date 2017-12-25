@@ -28,10 +28,10 @@ public class HdfsUtil {
 		try {
 			HdfsUtil hdfs = new HdfsUtil();
 			hdfs.init();
-			hdfs.upload("E:\\cluster\\Hadoop\\download\\qinmi.log","/input/qinmi.log");
+//			hdfs.upload("E:\\cluster\\Hadoop\\download\\qinmi.log","/input/qinmi.log");
 //			hdfs.listFiles();
 //			hdfs.mkdir();
-//			hdfs.rm();
+			hdfs.rm("/output/wordcount2");
 //			hdfs.download();
 //			DatanodeInfo[] datanodes = hdfs.getHDFSNodes();
 //			BlockLocation[] blocklocations = hdfs.getFileBlockLocations("/1.txt");
@@ -112,8 +112,8 @@ public class HdfsUtil {
 	 * @throws IOException 
 	 * @throws IllegalArgumentException 
 	 */
-	public void rm() throws IllegalArgumentException, IOException{
-		fs.delete(new Path("/aaa"), true);
+	public void rm(String path) throws IllegalArgumentException, IOException{
+		fs.delete(new Path(path), true);
 	}
 	public void rename() throws IllegalArgumentException, IOException{
 		fs.rename(new Path(HDFSUri+"/1.txt"), new Path(HDFSUri+"/2.txt"));

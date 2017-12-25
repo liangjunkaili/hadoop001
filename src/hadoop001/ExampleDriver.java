@@ -2,6 +2,7 @@ package hadoop001;
 
 import org.apache.hadoop.util.ProgramDriver;
 
+import hadoop001.mapreduce.UserHitsCount;
 import hadoop001.mapreduce.WordCount;
 
 public class ExampleDriver
@@ -12,7 +13,7 @@ public class ExampleDriver
     ProgramDriver pgd = new ProgramDriver();
     try {
       pgd.addClass("wordcount", WordCount.class, "A map/reduce program that counts the words in the input files.");
-
+      pgd.addClass("userhits", UserHitsCount.class, "");
       /*pgd.addClass("wordmean", WordMean.class, "A map/reduce program that counts the average length of the words in the input files.");
 
       pgd.addClass("wordmedian", WordMedian.class, "A map/reduce program that counts the median length of the words in the input files.");
